@@ -9,7 +9,7 @@ console.log(_.isString(true));
 console.log(_.isString('Muyang!'));
 console.log(_.isString(1));
 
-var filteredArray = _.uniq(['Hong', 1, 'Hong', 1, 2, 3, 4]);
+var filteredArray = _.uniq(['Hong']);
 console.log(filteredArray);
 // var user = os.userInfo();
 //
