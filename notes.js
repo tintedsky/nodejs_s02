@@ -8,7 +8,17 @@ var getAll = () => {
   console.log('Getting all notes.');
 };
 
+var readNote = (title) => {
+  console.log('Reading ', title);
+};
+
+var removeNote = (title) => {
+  console.log('Removing ', title);
+};
+
 module.exports = {
   addNote,
-  getAll
+  getAll,
+  readNote,
+  removeNote
 };
