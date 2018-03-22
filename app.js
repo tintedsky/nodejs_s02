@@ -13,7 +13,13 @@ console.log('Command: ', command);
 console.log('yargs.argv:', argv);
 
 if (command === 'add'){
-  notes.addNote(argv.title, argv.body);
+  var noteTitle = argv.title;
+  var note = notes.addNote(argv.title, argv.body);
+  if (note === undefined){
+    console.log(noteTitle, 'already exists in the notes. use another one instead.')
+  }else{
+    console.log(noteTitle, 'saved to notes successfully.')
+  }
 } else if (command === 'list'){
   notes.getAll();
 } else if (command === 'read'){
