@@ -36,8 +36,7 @@ var addNote = (title, body) => {
 
 
 var getAll = () => {
-  var notes = fetchNotes();
-  notes.filter((note) => logNote(note));
+  return fetchNotes();
 };
 
 var readNote = (title) => {
