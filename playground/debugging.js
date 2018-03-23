@@ -4,7 +4,7 @@ var person = {
 
 debugger;
 
-person.age = 17;
+person.age = 12;
 person.name = "mooooya";
 
 console.log(person.age);

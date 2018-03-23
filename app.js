@@ -23,6 +23,7 @@ if (command === 'add'){
 } else if (command === 'list'){
   notes.getAll();
 } else if (command === 'read'){
+  debugger;
   var note = notes.readNote(argv.title);
   if(note){
     console.log('note read.');

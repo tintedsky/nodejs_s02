@@ -42,8 +42,7 @@ var getAll = () => {
 var readNote = (title) => {
   var notes = fetchNotes();
   var noteGot = notes.filter((note) => note.title === title);
-  return noteGot.length > 0 ? noteGot[0] : null;
-  // can also return like: return noteGot[0];
+  return noteGot[0];
 };
 
 var removeNote = (title) => {
