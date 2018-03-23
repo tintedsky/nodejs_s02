@@ -3,7 +3,32 @@ const _ = require('lodash');
 const yargs = require('yargs');
 
 const notes = require('./notes.js');
-var argv = yargs.argv;
+var argv = yargs
+           .command('add', 'Add a new note',
+              {title:
+                 {describe: 'Title of note',
+                  demand:true,
+                  alias:'t'},
+               body:
+                 {describe: 'Body of note',
+                  demand: true,
+                  alias: 'b'}
+            })
+           .command('list', 'List all notes')
+           .command('read', 'read the note',
+              {title:
+                 {describe: 'Title of note',
+                  demand:true,
+                  alias:'t'}
+            })
+           .command('remove', 'remove a note',
+               {title:
+                  {describe: 'Title of note',
+                   demand:true,
+                   alias:'t'}
+             })
+           .help()
+           .argv;
 
 var command = argv._[0];
 if (command === 'add'){
@@ -26,7 +51,6 @@ if (command === 'add'){
   }else{
     console.log('note not found');
   }
-
 } else if (command === 'remove'){
   var isRemoved = notes.removeNote(argv.title);
   var message = isRemoved ? 'Note removed.' : 'Note not found.';
